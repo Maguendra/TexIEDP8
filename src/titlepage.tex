@@ -1,19 +1,54 @@
 \begin{titlepage}
-    \addbookmark{titlepage}{part}{\subtitle{}}
-    \begin{center}
-        \makeatletter
-            {\large \bfseries \@author } \vspace{0.5cm} % chktex 1
 
-            \@title \vspace{0.2cm} % chktex 1
+\addbookmark{titlepage}{part}{\subtitle{}}
 
-            {\large \bfseries \subtitle{}} \vspace{0.5cm} 
+%% ── Bandes : 85 % de la largeur, centrées en haut ───────────────────────────
+%% Hauteur physique : 0.85 × 21cm × (1050/2480) ≈ 7.56cm
+%% vspace = 7.56cm − marge haut 2.5cm = 5.06cm
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north, inner sep=0pt] at (current page.north) {%
+        \includegraphics[width=0.85\paperwidth]{images/bandes.png}%
+    };
+\end{tikzpicture}
 
-            Le \today
-            \vspace{0.5cm}
+\vspace*{5.2cm}
 
-            \includegraphics[scale=0.1]{logo.png} 
-        \makeatother
-    \end{center}
-    \vspace*{\fill}
+%% ── Logo centré juste sous les bandes ───────────────────────────────────────
+\begin{center}
+    \includegraphics{images/ied_paris_8_logo.jpeg}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{center}
+    {\small Licence Informatique IED \quad|\quad Année 2025/2026}
+\end{center}
+
+\vspace{1.6cm}
+
+%% ── Titre et sous-titre ─────────────────────────────────────────────────────
+\begin{center}
+    \makeatletter
+    {\LARGE\bfseries \@title}\\[0.6cm]
+    {\large\bfseries \subtitle{}}\\
+    {\small Enseignant : \teacher{}}\\[0.25cm]
+    \makeatother
+\end{center}
+
+\vspace{1.6cm}
+
+%% ── Auteur, enseignant, identifiant ─────────────────────────────────────────
+\begin{center}
+    \rule{0.5\textwidth}{0.4pt}\\[0.5cm]
+    {\large \name{}}\\[0.3cm]    
+    {\small ID étudiant : \studentid{}}
+\end{center}
+
+\vspace*{\fill}
+
+\begin{center}
+    {\small Le \today}
+\end{center}
+
 \end{titlepage}
 {\let\cleardoublepage\relax \frontmatter}

@@ -52,11 +52,11 @@
 %! @example :
 %   \image{Legend of image}{0.5}{image.png}{fig:myimage}
 \newcommand{\image}[4]{
-    \phantomsection{}
     \begin{center}
+        \phantomsection{}
         \captionof{figure}{#1}\label{#4}
         \vspace{0.5cm}
-        \includegraphics[scale=#2]{images/#3}
+        \includegraphics[width=\linewidth]{images/#3}
     \end{center}
 }
 
